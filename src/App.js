@@ -1,6 +1,136 @@
+function App(props)
+{
+  return(
+    <>
+      <h1>Roll Number:{props.rno}</h1>
+      <h1>Studnet Name:{props.sname}</h1>
+      <h1>Mark:{props.mark}</h1>
+    </>
+  )
+}
+export default App
+/*
+import './App.css'
 function App()
 {
-  var arr=[11,23,33,44,55,66,77,88,99,100,200,300]
+  //1. simple jsx
+  const v1=<h1>welcome to header1</h1>
+  //2. one top level element
+  const v2=<>One Top Level <h1>header1</h1><h2>header2</h2></>
+  //3. expression
+  var a=10
+  var b=20
+  const v3=<h1>Total : {a+b} </h1>
+  // 4. element must be closed
+  var v4=<hr/>
+  // 5. using attribute classname instead of class
+  var v5=<h2 id="myid" className="myclass">this is css style</h2>
+  var mystyle={
+          backgroundColor:"yellow",
+          fontSize:"24px",
+          fomtFamily:"Times",
+          border:" 10px double red",
+          textAlign:"center",
+          color:"green",
+          textTransform:"uppercase"
+
+  }
+  return(
+    <>
+    <h1>Inline css</h1>
+    <h1 style={{backgroundColor:'yellow',color:'red'}}>React JSX  - javascript & XML - allow html code in react</h1>
+    simple header : {v1}
+    multiple tag : {v2}
+    {v3}
+    {v4}
+    {v5}  
+    <h5 style={mystyle}>this is header5</h5>
+    <h5 style={mystyle}>this is header5</h5>
+    <h5 style={mystyle}>this is header5</h5>
+    <h5 style={mystyle}>this is header5</h5>
+    <h5 style={mystyle}>this is header5</h5>
+
+    <h6>This is header 6</h6> 
+    <h6>This is header 6</h6> 
+    <h6>This is header 6</h6> 
+    <h6>This is header 6</h6> 
+    <h6>This is header 6</h6> 
+  </>
+  )
+}
+export default App
+/*
+import React from 'react'
+import Success from './components/Success'
+import Failure from './components/Failure'
+import ph1 from './images/g1.jpg'
+import ph2 from './images/g2.jpg'
+import ph3 from './images/g3.jpg'
+import { k1, k2, k3, k4, k5, k6 } from './components/Commonvar'
+function App() {
+  var user=true
+  return (
+    <>
+    <div>App</div>
+    <h1>k1 value :{k1}</h1>
+    <h1>k2 value :{k2}</h1>
+    <h1>k3 value :{k3}</h1>
+    <h2>{k4} {k5} {k6}</h2>
+    <img src={ph1} alt="wrong path"></img>
+    {user===true ? <Success></Success> : <Failure></Failure>}
+    
+    <img src={ph2} alt="wrong path"></img>
+    
+    <img src={ph3} alt="wrong path"></img>
+      </>
+  )
+}
+  export default App
+/*
+function App()
+  {user ? <Success/> : <Failure/>}
+  var [v1,,v3,...v2]=[11,22,33,44,55,66,77,88,99]
+  return(
+    <>
+      {typeof(v1)}
+      <br></br>
+      {typeof(v2)}
+      <br></br>      
+      {Array.isArray(v2) && "This is array"}
+      <br></br>
+      {v2.map(i=><><br></br>{i}</>)}  
+    </>
+  )
+}
+export default App
+/*
+function App()
+{
+  var arr=[11,22,33,44,55]
+  var json1={rno:1,sname:"gowtham"}
+  var k1=100
+  var s1=true  
+  return(
+    <>
+      <h1>data type of arr:{typeof(arr)}</h1>
+      <h1>data type of json1:{typeof(json1)}</h1>
+      <h1>data type of k1:{typeof(k1)}</h1>
+      <h1>data type of s1:{typeof(s1)}</h1>
+
+      <h1>---------------------------</h1>
+
+      <h1>arr variable:{(Array.isArray(arr) && "This is array ") || "this is json"}</h1>
+      <h1>json1 variable:{(Array.isArray(json1) && "This is array ") || "this is json"}</h1>
+    </>
+  )
+}
+export default App
+/*
+function App()
+{
+  var arr=[10,-20,30,-11,13,-15,18]
+  var sum=0,c=0
+  var big=arr[0]
   return(
     <>
     <h2>all elements</h2>
@@ -24,6 +154,20 @@ function App()
             </>      
         )}
       </ul>
+      <h2 style={{display:"none"}}>{arr.map((item)=>sum=sum+item)}</h2>
+      <h1>Sum of Array:{sum}</h1>
+
+
+      <h2 style={{display:"none"}}>{arr.map((item)=>big<item && <>{big=item}</>)}</h2>
+      <h2>Highest no. in an Array:{big}</h2>
+      
+      <h2 style={{display:"none"}}>{arr.map((v)=>v%2===0 && <>{c=c+1}</>)}</h2>
+      <h2>Count of even Numbers in an Array:{c}</h2>
+      
+      <vig style={{display:"none"}}>{c=0}</vig>
+
+      <h2 style={{display:"none"}}>{arr.map((v)=>v<0 && <>{c=c+1}</>)}</h2>
+      <h2>Count of -ve Numbers in an Array:{c}</h2>
 
     </>
   )
